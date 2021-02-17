@@ -125,12 +125,15 @@
 
 	}
 
-	/* 演習の編集範囲 はじめ */
-
-	/* 演習1 ここから */
-
-	function add(){}
-	function sub(){}
+  // 足し算用の関数 add
+  function add(){
+		eqlNum.value = parseFloat(midNum[0].value) + parseFloat(midNum[1].value);
+	}
+  
+  // 引き算用の関数 sub
+	function sub(){
+		eqlNum.value = parseFloat(midNum[0].value) - parseFloat(midNum[1].value);
+	}
 
 	// 掛け算用の関数 mul
 	function mul() {
