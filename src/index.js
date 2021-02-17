@@ -130,8 +130,9 @@
 	/* 演習1 ここから */
 
 	function add(){}
-	function sub(){}
-
+	function sub(){
+		eqlNum.value = parseFloat(midNum[0].value) - parseFloat(midNum[1].value);
+	}
 	function mul() {}
 	function div() {}
 
