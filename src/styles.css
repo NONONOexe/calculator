@@ -2,6 +2,10 @@ body {
     display: flex;
     margin: 5vmin;
     justify-content: center;
+    font-family:
+        "BIZ UDPGothic",
+        "Hiragino Kaku Gothic ProN",
+        sans-serif;
 }
 
 #calculator {
