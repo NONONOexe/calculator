@@ -1,37 +1,190 @@
-input {
-	height: 30px;
-	font-size: 100%;
+body {
+    display: flex;
+    margin: 5vmin;
+    justify-content: center;
 }
 
-table {
-	width: 60%;
-	height: auto;
-	font-size: 28px; 
-	margin: 10px auto;
+#calculator {
+    width: 75vmin;
+    height: 90vmin;
+    border-radius: 10px;
+    box-shadow: 0px 5px 2px wheat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
 }
 
-td {
-	width: 25%;
-	border: 5px #a2a3a0 outset;
-	background-color: #dfe0dc;
+#display {
+    width: 77.5%;
+    height: 17.5%;
+    position: relative;
+    border-radius: 8px;
+    border: 3px inset peachpuff;
+    background-color: ivory;
+    color: chocolate;
+    font-size: 6vmin;
 }
 
-th {
-	width: 25%;
-	border: 5px #808da8 outset;
-	background-color: #b7c8e8;
+#display-operand {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    z-index: 10;
+    top: 40%;
+    box-sizing: border-box;
+    padding: 0% 4%;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.main {
-	width: 100;
-	height: auto;
-	text-align: center;		
+#display-state {
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    padding-right: 5%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: chocolate;
+    font-size: 3vmin;
 }
 
-#clr{
-	width: 25%;
-	border: 5px #eb6565 outset;
-	background-color: #ed91ac;
-	color: #292626;
+#controller {
+    width: 80%;
+    height: 55%;
+    margin-top: 8%;
+    display: inline-grid;
+    grid-template-areas:
+        "sqrt mrc  msub madd div"
+        "pct  num7 num8 num9 mul"
+        "pm   num4 num5 num6 sub"
+        "clr  num1 num2 num3 add"
+        "ac   num0 dec  eql  add";
+    grid-template-rows: auto;
+    grid-template-columns: 19% 14% 14% 14% 19%;
+    justify-items: stretch;
+    align-items: center;
+    justify-content: center;
+    align-content: stretch;
+    row-gap: 8%;
+    column-gap: 4%;
 }
 
+.button {
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: ivory;
+    color: darkred;
+    font-size: 2.5vmin;
+    box-shadow: 0px 2px 2px wheat;
+    cursor: pointer;
+}
+
+.button:active {
+    box-shadow: none;
+    transform: translate3d(0, 2px, 0);
+}
+
+#num9 {
+    grid-area: num9;
+}
+
+#num8 {
+    grid-area: num8;
+}
+
+#num7 {
+    grid-area: num7;
+}
+
+#num6 {
+    grid-area: num6;
+}
+
+#num5 {
+    grid-area: num5;
+}
+
+#num4 {
+    grid-area: num4;
+}
+
+#num3 {
+    grid-area: num3;
+}
+
+#num2 {
+    grid-area: num2;
+}
+
+#num1 {
+    grid-area: num1;
+}
+
+#num0 {
+    grid-area: num0;
+}
+
+#clr {
+    grid-area: clr;
+}
+
+#ac {
+    grid-area: ac;
+}
+
+#div {
+    grid-area: div;
+}
+
+#mul {
+    grid-area: mul;
+}
+
+#sub {
+    grid-area: sub;
+}
+
+#add {
+    grid-area: add;
+}
+
+#dec {
+    grid-area: dec;
+}
+
+#eql {
+    grid-area: eql;
+}
+
+#madd {
+    grid-area: madd;
+}
+
+#msub {
+    grid-area: msub;
+}
+
+#mrc {
+    grid-area: mrc;
+}
+
+#sqrt {
+    grid-area: sqrt;
+}
+
+#pct {
+    grid-area: pct;
+}
+
+#pm {
+    grid-area: pm;
+}

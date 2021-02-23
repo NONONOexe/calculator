@@ -1,56 +1,43 @@
 <!DOCTYPE html>
-<html land="ja">
-	<head>
-		<meta charset="UTF-8">
-		<title>電卓アプリ</title>
-		<link rel="stylesheet" href="./src/styles.css" type="text/css">
-		<script type="text/javascript" src="./src/index.js" charset="utf-8"></script>
-	</head>
-	<body>
-		<div class="header">
-			<h1>Javascriptで電卓をつくろう</h1>
-		</div>
-		<div class="main">
-			<div class="struck">
-
-				<input type="text" id="mid1num" value="0" readonly>
-				<spqn id="ope"> </spqn>
-				<input type="text" id="mid2num" value="" readonly>
-				<span>=</span>
-				<input type="text" id="eqlnum" value="" readonly>
-
-				<table>
-					<tr>
-						<td id="clr">AC</td>
-					</tr>
-					<tr>			
-						<td class="button" data-number="7">7</td>
-						<td class="button" data-number="8">8</td>
-						<td class="button" data-number="9">9</td>
-						<th class="symbol" data-number="add">+</th>
-					</tr>
-					<tr>			
-						<td class="button" data-number="4">4</td>
-						<td class="button" data-number="5">5</td>
-						<td class="button" data-number="6">6</td>
-						<th class="symbol" data-number="sub">-</th>
-					</tr>
-					<tr>			
-						<td class="button" data-number="1">1</td>
-						<td class="button" data-number="2">2</td>
-						<td class="button" data-number="3">3</td>
-						<th class="symbol" data-number="mul">×</th>
-					</tr>
-					<tr>			
-						<td class="button" data-number=".">.</td>
-						<td class="button" data-number="0">0</td>
-						<th id="eqlbtn" data-number="eql">=</th>
-						<th class="symbol" data-number="div">÷</th>
-					</tr>
-				</table>
-
-			</div>
-		</div>
-		<div class="footer"></div>
-	</body>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>電卓アプリ</title>
+        <link href="./src/styles.css" rel="stylesheet">
+        <script src="./src/index.js"></script>
+    </head>
+    <body>
+        <div id="calculator">
+            <div id="display">
+                <div id="display-operand"></div>
+                <div id="display-state"></div>
+            </div>
+            <div id="controller">
+                <div id="num9" class="button number" data-number="9">9</div>
+                <div id="num8" class="button number" data-number="8">8</div>
+                <div id="num7" class="button number" data-number="7">7</div>
+                <div id="num6" class="button number" data-number="6">6</div>
+                <div id="num5" class="button number" data-number="5">5</div>
+                <div id="num4" class="button number" data-number="4">4</div>
+                <div id="num3" class="button number" data-number="3">3</div>
+                <div id="num2" class="button number" data-number="2">2</div>
+                <div id="num1" class="button number" data-number="1">1</div>
+                <div id="num0" class="button number" data-number="0">0</div>
+                <div id="clr" class="button">C</div>
+                <div id="ac" class="button">AC</div>
+                <div id="div" class="button symbol" data-symbol="div">÷</div>
+                <div id="mul" class="button symbol" data-symbol="mul">×</div>
+                <div id="sub" class="button symbol" data-symbol="sub">−</div>
+                <div id="add" class="button symbol" data-symbol="add">＋</div>
+                <div id="dec" class="button number" data-number=".">.</div>
+                <div id="eql" class="button">=</div>
+                <div id="madd" class="button symbol">M＋</div>
+                <div id="msub" class="button symbol">M−</div>
+                <div id="mrc" class="button symbol">MRC</div>
+                <div id="sqrt" class="button symbol">√</div>
+                <div id="pct" class="button symbol">%</div>
+                <div id="pm" class="button symbol">＋/−</div>
+            </div>
+        </div>
+    </body>
 </html>
