@@ -23,6 +23,10 @@
 			symbolButton.addEventListener("click", (e) => pushSymbol(e.target.dataset.symbol));
 		}
 
+		// 小数点キー
+		decButton = document.getElementById("dec");
+		decButton.addEventListener("click", (e) => pushDecimalPoint());
+
 		// Cキー
 		clrButton = document.getElementById("clr");
 		clrButton.addEventListener("click", (e) => clear());
@@ -81,6 +85,20 @@
 			}
 			operator = symbol;
 			inputedOperator = true;
+		}
+
+		function pushDecimalPoint() {
+			if (inputedOperand1) {
+				if (!operand2.includes(".")) {
+					operand2 += ".";
+					operand.innerText = operand2;
+				}
+			} else {
+				if (!operand1.includes(".")) {
+					operand1 += ".";
+					operand.innerText = operand1;
+				}
+			}
 		}
 
 		function clear() {
