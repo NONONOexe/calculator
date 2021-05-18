@@ -131,16 +131,16 @@
 			}
 			switch (operator) {
 				case "add":
-					result = parseFloat(operand1) + parseFloat(operand2);
+					result = new Decimal(operand1).add(operand2);
 					break;
 				case "sub":
-					result = parseFloat(operand1) - parseFloat(operand2);
+					result = new Decimal(operand1).sub(operand2);
 					break;
 				case "mul":
-					result = parseFloat(operand1) * parseFloat(operand2);
+					result = new Decimal(operand1).mul(operand2);
 					break;
 				case "div":
-					result = parseFloat(operand1) / parseFloat(operand2);
+					result = new Decimal(operand1).div(operand2);
 					break;
 			}
 			operand1 = "";
