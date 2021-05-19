@@ -40,20 +40,21 @@
 		eqlButton.addEventListener("click", (e) => calc());
 
 		function pushNumber(number) {
+			result = "";
 			if (operand1.length != 0 && inputedOperator) {
 				operand.innerText = "";
 				inputedOperator = false;
 				inputedOperand1 = true;
 			}
 			if (inputedOperand1) {
-				if (14 <= operand2.length) {
+				if (10 <= operand2.length) {
 					state.innerText = "ERROR";
 					return;
 				}
 				operand2 += number;
 				operand.innerText = operand2;
 			} else {
-				if (14 <= operand1.length) {
+				if (10 <= operand1.length) {
 					state.innerText = "ERROR";
 					return;
 				}
@@ -131,23 +132,20 @@
 			}
 			switch (operator) {
 				case "add":
-					result = new Decimal(operand1).add(operand2);
+					register = new Decimal(operand1).add(operand2);
 					break;
 				case "sub":
-					result = new Decimal(operand1).sub(operand2);
+					register = new Decimal(operand1).sub(operand2);
 					break;
 				case "mul":
-					result = new Decimal(operand1).mul(operand2);
+					register = new Decimal(operand1).mul(operand2);
 					break;
 				case "div":
-					result = new Decimal(operand1).div(operand2);
+					register = new Decimal(operand1).div(operand2);
 					break;
 			}
-			operand1 = "";
-			operand2 = "";
-			operator = "";
-			operand.innerText = result;
-			state.innerText = "";
+			allClear();
+			operand.innerText = result = register.toString();
 		}
 	}
 }());
