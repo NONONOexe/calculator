@@ -39,10 +39,19 @@
 		eqlButton = document.getElementById("eql");
 		eqlButton.addEventListener("click", (e) => calc());
 
+		/**
+		 * 指定された数値をオペランド表示部に反映する
+		 * @param {number} number オペランド表示部に表示する数値
+		 */
+		function updateOperand(number) {
+			const str = number.toString();
+			operand.innerText = str.slice(0, 10);
+		}
+
 		function pushNumber(number) {
 			result = "";
 			if (operand1.length != 0 && inputedOperator) {
-				operand.innerText = "";
+				updateOperand("");
 				inputedOperator = false;
 				inputedOperand1 = true;
 			}
@@ -52,14 +61,14 @@
 					return;
 				}
 				operand2 += number;
-				operand.innerText = operand2;
+				updateOperand(operand2);
 			} else {
 				if (10 <= operand1.length) {
 					state.innerText = "ERROR";
 					return;
 				}
 				operand1 += number;
-				operand.innerText = operand1;
+				updateOperand(operand1);
 			}
 		}
 
@@ -92,12 +101,12 @@
 			if (inputedOperand1) {
 				if (!operand2.includes(".")) {
 					operand2 += ".";
-					operand.innerText = operand2;
+					updateOperand(operand2);
 				}
 			} else {
 				if (!operand1.includes(".")) {
 					operand1 += ".";
-					operand.innerText = operand1;
+					updateOperand(operand1);
 				}
 			}
 		}
@@ -108,7 +117,7 @@
 			} else {
 				operand1 = "";
 			}
-			operand.innerText = "";
+			updateOperand("");
 		}
 
 		function allClear() {
@@ -118,7 +127,7 @@
 			result = "";
 			inputedOperator = false;
 			inputedOperand1 = false;
-			operand.innerText = "";
+			updateOperand("");
 			state.innerText = "";
 		}
 
@@ -145,7 +154,7 @@
 					break;
 			}
 			allClear();
-			operand.innerText = result = register.toString();
+			updateOperand(result = register.toString());
 		}
 	}
 }());
